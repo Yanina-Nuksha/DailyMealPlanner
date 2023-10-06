@@ -1,0 +1,31 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Info";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Daily Meal Planner</h1>
+</div>
+<form>
+    <p>
+        <label>Возраст: @Model.Age</label>
+    </p>
+    <p>
+        <label>Рост: @Model.Height</label>
+    </p>
+    <p>
+        <label>Вес: @Model.Weight</label>
+    </p>
+    <p>
+        <label>Уровень активности: @Model.Activity</label>
+    </p>
+    <p>
+        <label>Норма калорий: @Model.CaloriesRate</label>
+    </p>
+</form>
+<form method="get" asp-controller="User" asp-action="UpdateUser">
+    <input type="submit" value="Изменить данные" />
+</form>
+<form asp-controller="MealPlan" asp-action="Index">
+    <input type="submit" value="План" />
+</form>

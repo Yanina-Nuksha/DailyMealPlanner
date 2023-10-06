@@ -1,0 +1,167 @@
+﻿@model User
+<html>
+<head runat="server">
+    <title>Create</title>
+    <script>
+        
+    </script>
+</head>
+<body onload="BeginPageLoad();" onunload="EndPageLoad();">
+    <form>
+        <h1>План на день:</h1>
+        <p>
+            <h2>Завтрак:</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Название </th>
+                        <th> Граммы </th>
+                        <th> Жиры </th>
+                        <th> Белки </th>
+                        <th> Углеводы </th>
+                        <th> Калории </th>
+                        <th> Категория </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.MealPlan.ProductsBreakfast)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Model.MealPlan.GetMealProduct(item.ProductId).Gramms |
+                                @Html.ActionLink("Редактировать", "Edit", new { productId = Model.MealPlan.GetMealProduct(item.ProductId).MealProductId})
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fats)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Protein)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Carbs)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Calories)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Удалить", "Delete", new { productId = item.ProductId, type = "breakfast" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <button name="button" asp-action="ProductList">Добавить продукт</button>
+        </p>
+        <p>
+            <h2>Обед:</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Название </th>
+                        <th> Граммы </th>
+                        <th> Жиры </th>
+                        <th> Белки </th>
+                        <th> Углеводы </th>
+                        <th> Калории </th>
+                        <th> Категория </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.MealPlan.ProductsLunch)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Model.MealPlan.GetGrammsOfProduct(item.ProductId) |
+                                @Html.ActionLink("Редактировать", "Edit", new { productId = Model.MealPlan.GetMealProduct(item.ProductId).MealProductId})
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fats)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Protein)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Carbs)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Calories)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Удалить", "Delete", new { productId = item.ProductId, type = "lunch" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <button name="button" asp-action="ProductList">Добавить продукт</button>
+        </p>
+        <p>
+            <h2>Ужин:</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Название </th>
+                        <th> Граммы </th>
+                        <th> Жиры </th>
+                        <th> Белки </th>
+                        <th> Углеводы </th>
+                        <th> Калории </th>
+                        <th> Категория </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.MealPlan.ProductsDinner)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Model.MealPlan.GetGrammsOfProduct(item.ProductId) |
+                                @Html.ActionLink("Редактировать", "Edit", new { productId = Model.MealPlan.GetMealProduct(item.ProductId).MealProductId})
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Fats)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Protein)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Carbs)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Calories)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Удалить", "Delete", new { productId = item.ProductId, type = "dinner" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <button name="button" asp-action="ProductList">Добавить продукт</button>
+        </p>
+        <p>
+            <b>Всего ккалорий: </b> @Model.MealPlan.GetAllCalories()
+        </p>
+        <p>
+            @Html.ActionLink("Сохранить план XML", "ExportToXml")
+        </p>
+    </form>
+</body>
+</html>

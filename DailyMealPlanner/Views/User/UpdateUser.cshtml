@@ -1,0 +1,34 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h2>Редактировать параметры</h2>
+<form method="post">
+    <p>
+        <label asp-for="Age">Возраст:</label>
+        <input asp-for="Age" />
+        <span asp-validation-for="Age"></span>
+    </p>
+    <p>
+        <label asp-for="Height">Рост:</label>
+        <input asp-for="Height" />
+        <span asp-validation-for="Height"></span>
+    </p>
+    <p>
+        <label asp-for="Weight">Вес:</label>
+        <input asp-for="Weight" />
+        <span asp-validation-for="Weight"></span>
+    </p>
+    <p>
+        <label asp-for="Activity">Уровень активности:</label>
+        <select asp-for="Activity">
+            <option value="Низкий">Низкий</option>
+            <option value="Нормальный">Нормальный</option>
+            <option value="Средний">Средний</option>
+            <option value="Высокий">Высокий</option>
+        </select>
+    </p>
+    <input type="submit" value="Сохранить" />
+</form>

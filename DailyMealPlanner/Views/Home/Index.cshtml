@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Meal Plan";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Daily Meal Planner</h1>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>@User.Identity.Name</p>
+    <form method="post" asp-controller="User" asp-action="Index" asp-route-login=@User.Identity.Name>
+        <input type="submit" value="Перейти на страницу" />
+    </form>
+    <form method="post" asp-controller="Account" asp-action="Logout">
+        <input type="submit" value="Выход" />
+    </form>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Вход</a>
+    <a asp-controller="Account" asp-action="Register">Регистрация</a>
+}

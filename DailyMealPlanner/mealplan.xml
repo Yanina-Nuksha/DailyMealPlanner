@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MealPlan xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProductsBreakfast>
+    <Product>
+      <ProductId>95</ProductId>
+      <Name>Бренди 40% алкоголя</Name>
+      <Gramms>100</Gramms>
+      <Fats>0</Fats>
+      <Protein>0</Protein>
+      <Carbs>0.5</Carbs>
+      <Calories>225</Calories>
+      <Category>Алкоголь</Category>
+    </Product>
+    <Product>
+      <ProductId>95</ProductId>
+      <Name>Бренди 40% алкоголя</Name>
+      <Gramms>100</Gramms>
+      <Fats>0</Fats>
+      <Protein>0</Protein>
+      <Carbs>0.5</Carbs>
+      <Calories>225</Calories>
+      <Category>Алкоголь</Category>
+    </Product>
+  </ProductsBreakfast>
+  <ProductsLunch>
+    <Product>
+      <ProductId>95</ProductId>
+      <Name>Бренди 40% алкоголя</Name>
+      <Gramms>100</Gramms>
+      <Fats>0</Fats>
+      <Protein>0</Protein>
+      <Carbs>0.5</Carbs>
+      <Calories>225</Calories>
+      <Category>Алкоголь</Category>
+    </Product>
+    <Product>
+      <ProductId>95</ProductId>
+      <Name>Бренди 40% алкоголя</Name>
+      <Gramms>100</Gramms>
+      <Fats>0</Fats>
+      <Protein>0</Protein>
+      <Carbs>0.5</Carbs>
+      <Calories>225</Calories>
+      <Category>Алкоголь</Category>
+    </Product>
+  </ProductsLunch>
+  <ProductsDinner>
+    <Product>
+      <ProductId>95</ProductId>
+      <Name>Бренди 40% алкоголя</Name>
+      <Gramms>100</Gramms>
+      <Fats>0</Fats>
+      <Protein>0</Protein>
+      <Carbs>0.5</Carbs>
+      <Calories>225</Calories>
+      <Category>Алкоголь</Category>
+    </Product>
+    <Product>
+      <ProductId>95</ProductId>
+      <Name>Бренди 40% алкоголя</Name>
+      <Gramms>100</Gramms>
+      <Fats>0</Fats>
+      <Protein>0</Protein>
+      <Carbs>0.5</Carbs>
+      <Calories>225</Calories>
+      <Category>Алкоголь</Category>
+    </Product>
+  </ProductsDinner>
+  <MealProducts />
+</MealPlan>

@@ -1,0 +1,63 @@
+﻿@model  DailyMealPlanner.ViewModels.MealProducts
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<form method="get">
+    <div class="form-inline">
+        <label class="control-label">Название: </label>
+        <input name="name" class="form-control" />
+
+        <label class="control-label">Категория: </label>
+        @Html.DropDownList("category", Model.Categories as SelectList,
+                    htmlAttributes: new { @class = "form-control" })
+        <input type="submit" value="Фильтр" class="btn btn-default" />
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th> Название </th>
+            <th> Граммы </th>
+            <th> Жиры </th>
+            <th> Белки </th>
+            <th> Углеводы </th>
+            <th> Калории </th>
+            <th> Категория </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Products)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gramms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fats)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Protein)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Carbs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Calories)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.ActionLink("Добавить к завтраку", "AddBreakfast", new { productId = item.ProductId, userId = Model.UserId, type = "breakfast" }) | 
+                    @Html.ActionLink("Добавить к обеду", "AddLunch", new { productId = item.ProductId, userId = Model.UserId, type = "lunch" } ) |
+                    @Html.ActionLink("Добавить к ужину", "AddDinner", new { productId = item.ProductId, userId = Model.UserId, type = "dinner" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
